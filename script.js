@@ -26,9 +26,9 @@ const addOrUpdateTask = () => {
 
   if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
+  }else {
+    taskData[dataArrIndex] = taskObj;
   }
-  updateTaskContainer();
-  reset();
 };
 
 const updateTaskContainer = () => {
@@ -58,7 +58,16 @@ const deleteTask = (buttonEl) => {
 };
 
 const editTask = (buttonEl) => {
+  const dataArrIndex = taskData.findIndex(
+    (item) => item.id === buttonEl.parentElement.id
+  );
 
+  currentTask = taskData[dataArrIndex];
+  titleInput.value = currentTask.title;
+  dateInput.value = currentTask.date;
+  descriptionInput.value = currentTask.description;
+  addOrUpdateTaskBtn.innerText = "Update Task";
+  taskForm.classList.toggle("hidden");
 };
 
 const reset = () => {
