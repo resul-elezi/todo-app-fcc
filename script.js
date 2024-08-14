@@ -30,8 +30,8 @@ const addOrUpdateTask = () => {
     taskData[dataArrIndex] = taskObj;
   }
 
-  updateTaskContainer()
-  reset()
+  updateTaskContainer();
+  reset();
 };
 
 const updateTaskContainer = () => {
@@ -105,7 +105,7 @@ cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
 discardBtn.addEventListener("click", () => {
   confirmCloseDialog.close();
-  reset()
+  reset();
 });
 
 taskForm.addEventListener("submit", (e) => {
