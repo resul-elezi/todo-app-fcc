@@ -28,7 +28,6 @@ const addOrUpdateTask = () => {
   } else {
     taskData[dataArrIndex] = taskObj;
   }
-
   updateTaskContainer()
   reset()
 };
