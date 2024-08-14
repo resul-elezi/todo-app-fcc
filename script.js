@@ -23,15 +23,14 @@ const addOrUpdateTask = () => {
     date: dateInput.value,
     description: descriptionInput.value,
   };
-
   if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
   } else {
     taskData[dataArrIndex] = taskObj;
   }
 
-  updateTaskContainer();
-  reset();
+  updateTaskContainer()
+  reset()
 };
 
 const updateTaskContainer = () => {
@@ -52,7 +51,6 @@ const updateTaskContainer = () => {
   );
 };
 
-
 const deleteTask = (buttonEl) => {
   const dataArrIndex = taskData.findIndex(
     (item) => item.id === buttonEl.parentElement.id
@@ -68,7 +66,6 @@ const editTask = (buttonEl) => {
   );
 
   currentTask = taskData[dataArrIndex];
-
   titleInput.value = currentTask.title;
   dateInput.value = currentTask.date;
   descriptionInput.value = currentTask.description;
@@ -102,7 +99,6 @@ closeTaskFormBtn.addEventListener("click", () => {
 });
 
 cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
-
 discardBtn.addEventListener("click", () => {
   confirmCloseDialog.close();
   reset();
