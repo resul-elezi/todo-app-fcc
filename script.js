@@ -13,6 +13,7 @@ const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
 
 const taskData = [];
+
 let currentTask = {};
 
 const addOrUpdateTask = () => {
@@ -29,6 +30,7 @@ const addOrUpdateTask = () => {
   } else {
     taskData[dataArrIndex] = taskObj;
   }
+
   localStorage.setItem("data", JSON.stringify(taskData));
   updateTaskContainer()
   reset()
@@ -60,6 +62,7 @@ const deleteTask = (buttonEl) => {
 
   buttonEl.parentElement.remove();
   taskData.splice(dataArrIndex, 1);
+  localStorage.setItem("data", JSON.stringify(taskData));
 }
 
 const editTask = (buttonEl) => {
