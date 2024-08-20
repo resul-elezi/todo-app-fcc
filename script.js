@@ -23,13 +23,11 @@ const addOrUpdateTask = () => {
     date: dateInput.value,
     description: descriptionInput.value,
   };
-
   if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
   } else {
     taskData[dataArrIndex] = taskObj;
   }
-
   localStorage.setItem("data", JSON.stringify(taskData));
   updateTaskContainer()
   reset()
